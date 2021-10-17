@@ -7,7 +7,7 @@
 		function download(filename, text) {
 	    var noteNum = parseInt(document.getElementById("numCreated").innerHTML);
 		var params = [];
-		for(let i=0,i!==noteNum) {
+		for(let i=0;i!==noteNum;i++) {
 			params.push(document.getElementById(i.toString()).getElementsByTagName('input').value);
 			params.push(document.getElementById(i.toString()).getElementsByTagName('textarea').value);
 			params.push(`
@@ -30,10 +30,10 @@
 		
 
   document.body.removeChild(element);
-} */
+	*/}
 		function savwe() {
 			console.log("e")
-		'data:text/attachment;,' + //here is the trick
+		'data:text/attachment;,' +
         document.documentElement.innerHTML;
 		}
 			function cleer() {
@@ -94,7 +94,6 @@
 			border-width: thin;
 			margin-left:20px;
 			border-radius: 2px;
-			vertical-align:middle;
 		}
 		.delbut {
 			display: inline-block;
