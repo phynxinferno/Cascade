@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>notes</title>
+	<script>
+		function download(filename, text) {
+	    var noteNum = parseInt(document.getElementById("numCreated").innerHTML);
+		var params = [];
+		for(let i=0,i!==noteNum) {
+			params.push(document.getElementById(i.toString()).getElementsByTagName('input').value);
+			params.push(document.getElementById(i.toString()).getElementsByTagName('textarea').value);
+			params.push(`
+-
+`);
+		}
+		var contentString = '';
+		for(const element of params) {
+			contentString = contentString + element;
+		}
+			console.log(contentString);
+      /*  var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent());
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+		
+
+  document.body.removeChild(element);
+} */
+		function savwe() {
+			console.log("e")
+		'data:text/attachment;,' + //here is the trick
+        document.documentElement.innerHTML;
+		}
+			function cleer() {
+			document.getElementById("inputs").innerHTML = null;
+			document.getElementById("numCreated").innerHTML = 0;
+				console.log('test');
+		}
+		function newTopic() {
+			function delElem(eNum) {
+            document.getElementById('inputs').removeChild(document.getElementById(eNum.toString()));
+			document.getElementById("numCreated").innerHTML = parseInt(document.getElementById("numCreated").innerHTML) - 1;
+		}
+			let bigContainer = document.getElementById("inputs");
+			let container = document.createElement("div");
+			let name = document.createElement("input");
+			let labele = document.createElement("label");
+			let bullets = document.createElement("textarea");
+			let delButton = document.createElement("img");
+			let delF = document.createElement("script");
+			let brea = document.createElement("br")
+			let numCr = parseInt(document.getElementById("numCreated").innerHTML);
+			let realNum = numCr += 1;
+			name.className = "topicName";
+			delButton.className = "delbut";
+			name.name = realNum.toString();
+			labele.for = realNum.toString();
+			container.id = realNum;
+			container.className = "notecont";
+			delButton.src = "./garbage.png";
+			bullets.rows = "6";
+			bullets.cols = "75";
+			bullets.id = "test";
+			bullets.className = "largeInput";
+			container.appendChild(name);
+			container.appendChild(delButton);
+			container.appendChild(labele);
+			container.appendChild(delF);
+			container.appendChild(bullets);
+			container.appendChild(brea);
+			bigContainer.appendChild(container);
+			delButton.addEventListener("click", () => {
+				delElem(realNum);
+			});
+			document.getElementById("numCreated").innerHTML = realNum;
+			console.log('added topic');
+		}
+	</script>
+	<style>
+		body {
+			background-color: #3b3b3b;
+		}
+		button {
+			display: block;
+			color: white;
+			background-color: #3b3b3b;
+			border-style:solid;
+			border-color:grey;
+			border-width: thin;
+			margin-left:20px;
+			border-radius: 2px;
+			vertical-align:middle;
+		}
+		.delbut {
+			display: inline-block;
+		}
+		.largeInput {
+			display: block;
+			border-style: solid;
+			border-color: grey;
+			background-color: #3b3b3b;
+			color: white;
+			margin-left: 20px;
+		}
+		.topicName {
+			background-color: #3b3b3b;
+			color: white;
+			border-style:solid;
+			border-color:grey;
+			border-width: thin;
+			margin-left: 20px;
+			vertical-align:middle;
+
+		}
+		#inputs {
+			background-color:#303030;
+			float:right;
+			width: 90%;
+			max-width: 90%;
+			min-width: 90%;
+			height:600px;
+			display:block;
+			overflow:scroll;
+			border-color:#303030;
+			border-style:solid;
+		}
+		.notecont {
+			display:block;
+		}
+		img {
+			height: 0.75%;
+			width: 0.75%;
+			margin-left:10px;
+			margin-top: auto;
+			display: inline-block;
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="inputs">
+		<br>
+	</div>
+	<button onClick="newTopic()">New Topic</button>
+	<br>
+	<button onClick="cleer()">Clear</button>
+	<br>
+	<a href="document.documentElement.innerHTML" download="Notes"><button>Save</button></a>
+	<br>
+	<p id="numCreated" style="color:#3b3b3b">0</p>
+</body>
+</html>
