@@ -5,4 +5,4 @@
 <p>Codesandbox:</p>
 <a href="https://codesandbox.io/s/notesapp-jvd4j">Edit</a>
 <br>
-<a href="https://codesandbox.io/s/notesapp-jvd4j">View</a>
+<a href="jvd4j.csb.app">View</a>
