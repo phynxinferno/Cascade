@@ -5,25 +5,25 @@
     <title>Notes</title>
     <script>
       function setUrl() {
-		//sets the url of an image box using its specified numerical ID
+        //sets the url of an image box using its specified numerical ID
         let elem = document.getElementById("numberI").value;
         let img = document.getElementById("imgInput").value;
         document.getElementById(elem).getElementsByTagName("img")[1].src = img;
         console.log("e");
         document.getElementById("imgMenu").style.display = "none";
       }
-	  //hides image replacement menu
+      //hides image replacement menu
       function hideImgMenu() {
         console.log("e");
         document.getElementById("imgMenu").style.display = "none";
       }
       function showImgMenu() {
-		//shows image replacement menu
+        //shows image replacement menu
         console.log("e");
         document.getElementById("imgMenu").style.display = "block";
       }
       function download() {
-		//inefficient download function that's about half code snippet
+        //inefficient download function that's about half code snippet
         var noteNum = parseInt(document.getElementById("numCreated").innerHTML);
         var params = [];
         params.push(document.getElementById("yes").value);
@@ -40,7 +40,6 @@
               "]"
           );
           params.push(`
-
 `);
         }
         var contentString = "";
@@ -63,13 +62,13 @@
         document.body.removeChild(element);
       }
       function cleer() {
-		//clears all topics
+        //clears all topics
         document.getElementById("inputs").innerHTML = null;
         document.getElementById("numCreated").innerHTML = 0;
         console.log("test");
       }
       function newTopic() {
-		  //creates new topic and appends it to the bottom of inputs div
+        //creates new topic and appends it to the bottom of inputs div
         function delElem(eNum) {
           console.log(eNum);
           document
@@ -244,11 +243,11 @@
         border-style: none;
       }
       .gitLink {
-        width: 10%;
-        height: 10%;
-        position:absolute;
-        margin-left: 90%;
-        margin-top: 40%;
+        width: 57px;
+        height: 57px;
+        position: absolute;
+        margin-left: 95%;
+        margin-top: 20%;
       }
     </style>
   </head>
@@ -294,7 +293,7 @@
     <p id="numCreated" style="color: #3b3b3b;">0</p>
     <p id="tNumCreated" style="color: #3b3b3b;">0</p>
     <a href="https://github.com/phynxinferno/notesApp">
-      <img class="gitLink"src="./github.png">
+      <img class="gitLink" src="./github.png" />
     </a>
   </body>
 </html>
