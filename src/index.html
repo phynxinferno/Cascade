@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Notes</title>
+    <script src="./render.js" />
+    <style>
+      body {
+        background-color: #3b3b3b;
+      }
+      input {
+        background-color: #3b3b3b;
+        border-style: solid;
+        border-width: thin;
+        border-radius: 2px;
+        color: white;
+      }
+      button {
+        display: block;
+        color: white;
+        background-color: #3b3b3b;
+        border-style: solid;
+        border-color: grey;
+        border-width: thin;
+        margin-left: 20px;
+        border-radius: 2px;
+      }
+      .delbut {
+        display: inline-block;
+        height: 0.75%;
+        width: 0.75%;
+        margin-left: 10px;
+        margin-top: auto;
+      }
+      .largeInput {
+        display: inline-block;
+        border-style: solid;
+        border-color: grey;
+        background-color: #3b3b3b;
+        color: white;
+        margin-left: 20px;
+      }
+      .topicName {
+        background-color: #3b3b3b;
+        color: white;
+        border-style: solid;
+        border-color: grey;
+        border-width: thin;
+        margin-left: 20px;
+        vertical-align: middle;
+      }
+      .close {
+        margin-top: 5px;
+        margin-right: 5px;
+        float: right;
+      }
+      .imagee {
+        width: 108px;
+        height: 108px;
+        margin-right: 20px;
+        vertical-align: middle;
+        float: right;
+      }
+      .menu {
+        background-color: #3b3b3b;
+        border-style: solid;
+        border-color: grey;
+        color: white;
+        width: 300px;
+        height: 200px;
+        border-width: thin;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        z-index: 1000;
+        text-align: center;
+        overflow: hidden;
+        display: none;
+      }
+      .set {
+        display: block;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #inputs {
+        background-color: #303030;
+        float: right;
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+        height: 600px;
+        display: block;
+        overflow: scroll;
+        border-color: #303030;
+        border-style: solid;
+      }
+      .notecont {
+        display: block;
+      }
+      hr {
+        color: #3b3b3b;
+        border-style: none;
+      }
+      .gitLink {
+        width: 57px;
+        height: 57px;
+        position: absolute;
+        margin-left: 95%;
+        margin-top: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imgMenu" class="menu" onload="hideImgMenu()">
+      <button class="close" onClick="hideImgMenu()">x</button>
+      <br />
+      <br />
+      <label for="iInp">Image URL: </label>
+      <input name="iInp" type="text" id="imgInput" />
+      <br />
+      <p />
+      <label for="iIenp">Topic Number</label>
+      <input name="iIenp" type="number" id="numberI" />
+      <p />
+      <button onClick="setUrl()" class="set">Set</button>
+    </div>
+    <input
+      type="text"
+      style="
+        font-size: 30px;
+        width: 25%;
+        margin-left: 20px;
+        border-color: grey;
+        color: #cecece;
+      "
+      id="yes"
+      ;
+    />
+    <br />
+    <hr />
+    <div id="inputs">
+      <br />
+    </div>
+    <button onClick="newTopic()">New Topic</button>
+    <br />
+    <button onClick="showImgMenu()">Image</button>
+    <br />
+    <button onClick="cleer()">Clear</button>
+    <br />
+    <button onClick="download()">Save</button>
+    <br />
+    <p id="numCreated" style="color: #3b3b3b;">0</p>
+    <p id="tNumCreated" style="color: #3b3b3b;">0</p>
+    <a href="https://github.com/phynxinferno/notesApp">
+      <img class="gitLink" src="./github.png" />
+    </a>
+  </body>
+</html>
